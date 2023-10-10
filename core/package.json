@@ -1,5 +1,5 @@
 {
-  "name": "translater",
+  "name": "url-shorting",
   "version": "1.0.0",
   "description": "",
   "author": "osman",
@@ -12,7 +12,7 @@
     "start": "nest start",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
-    "start:prod": "node dist/main.js",
+    "start:prod": "npx prisma migrate deploy && node dist/src/main.js",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
     "test": "jest --config ./testConfig/jest.json",
     "test:watch": "jest --watch",
