@@ -13,6 +13,6 @@ async function bootstrap() {
 
   await app.listen(PORT);
 
-  console.log('API_SERVICE has ben started on port: ' + PORT);
+  console.log('Api service has ben started on port: ' + PORT);
 }
 bootstrap();
