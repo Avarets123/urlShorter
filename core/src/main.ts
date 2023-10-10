@@ -1,14 +1,18 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { exceptionBoot } from './infrastructure/exceptions/exception.boot';
+import { validationBoot } from '@infrastructure/validation/validation.boot';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   exceptionBoot(app);
+  validationBoot(app);
 
-  await app.init();
+  const PORT = +process.env.API_PORT || 3333;
 
-  console.log('Translater bot has ben inited');
+  await app.listen(PORT);
+
+  console.log('API_SERVICE has ben started on port: ' + PORT);
 }
 bootstrap();

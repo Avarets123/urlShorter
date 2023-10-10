@@ -10,6 +10,10 @@ datasource db {
 
 model UrlModel {
   id          String @unique @default(uuid()) @db.Uuid
-  originalUrl String @unique
-  newUrl      String @unique
+  originalUrl String
+  title       String @unique
+
+  createdAt DateTime @default(now())
+
+  @@map("url_model")
 }
