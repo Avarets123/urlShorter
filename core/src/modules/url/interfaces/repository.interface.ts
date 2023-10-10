@@ -1,5 +1,4 @@
 import { Prisma, UrlModel } from '@prisma/client';
-import { UrlModelCreateDto } from '../dto/urlModelCreate.dto';
 
 export interface IUrlRepository {
   create(data: Prisma.UrlModelCreateInput): Promise<unknown>;
